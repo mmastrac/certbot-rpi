@@ -48,7 +48,7 @@ COPY certbot /opt/certbot/src/certbot/
 COPY acme /opt/certbot/src/acme/
 COPY certbot-apache /opt/certbot/src/certbot-apache/
 COPY certbot-nginx /opt/certbot/src/certbot-nginx/
-
+COPY certbot-dns-cloudflare /opt/certbot/src/certbot-dns-cloudflare/
 
 RUN virtualenv --no-site-packages -p python2 /opt/certbot/venv
 
@@ -59,7 +59,8 @@ RUN /opt/certbot/venv/bin/python /opt/certbot/src/pipstrap.py && \
     -e /opt/certbot/src/acme \
     -e /opt/certbot/src \
     -e /opt/certbot/src/certbot-apache \
-    -e /opt/certbot/src/certbot-nginx
+    -e /opt/certbot/src/certbot-nginx \
+    -e /opt/certbot/src/certbot-dns-cloudflare
 
 # install in editable mode (-e) to save space: it's not possible to
 # "rm -rf /opt/certbot/src" (it's stays in the underlaying image);
