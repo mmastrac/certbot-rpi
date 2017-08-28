@@ -14,9 +14,9 @@ before_install:
   - cp ./Dockerfile certbot/Dockerfile
 
 install:
-  - docker build --rm --no-cache -t bcecchinato/certbot-rpi certbot/
-  - docker push bcecchinato/certbot-rpi
-  - docker tag bcecchinato/certbot-rpi bcecchinato/letsencrypt-rpi
-  - docker push bcecchinato/letsencrypt-rpi
+  - docker build --rm --no-cache -t "$DOCKER_USERNAME"/certbot-rpi certbot/
+  - docker push "$DOCKER_USERNAME"/certbot-rpi
+  - docker tag "$DOCKER_USERNAME"/certbot-rpi "$DOCKER_USERNAME"/letsencrypt-rpi
+  - docker push "$DOCKER_USERNAME"/letsencrypt-rpi
 
 script: true
