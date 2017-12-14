@@ -5,7 +5,11 @@ services:
   - docker
 
 before_install:
-  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - cd certbot/
+  - git fetch origin
+  - git pull origin master
+  - cd ..
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - docker run --rm --privileged multiarch/qemu-user-static:register
   - cp ./Dockerfile certbot/Dockerfile
 
