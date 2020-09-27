@@ -1,4 +1,15 @@
-# certbot-rpi - ![master](https://secure.travis-ci.org/bcecchinato/certbot-rpi.png?branch=master)
+# certbot-rpi
+
+## THIS REPOSITORY IS DEPRECATED AND NO LONGER BUILDS
+
+There are alternative repositories that you can use, including the official ones from certbot.
+
+https://hub.docker.com/r/certbot/certbot/
+
+#
+#
+#
+#
 
 Raspberry Pi compatible Docker base image with [LetsEncrypt](https://letsencrypt.org/).  
 
